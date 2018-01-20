@@ -127,5 +127,11 @@ int scoreFor(int player, struct gameState *state);
 int getWinners(int players[MAX_PLAYERS], struct gameState *state);
 /* Set array position of each player who won (remember ties!) to
    1, others to 0 */
+   
+ void smithyEffect(int currentPlayer, struct gameState *state, int handPos);
+ void adventurerEffect(struct gameState *state, int drawntreasure, int currentPlayer, int cardDrawn, int z, int *temphand);
+ void villageEffect(struct gameState *state, int currentPlayer, int handPos);
+ int treasure_mapEffect(struct gameState *state, int currentPlayer, int handPos, int index);
+ void great_hallEffect(struct gameState *state, int handPos, int currentPlayer);
 
 #endif
