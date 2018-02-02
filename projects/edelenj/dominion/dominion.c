@@ -1265,7 +1265,7 @@ int updateCoins(int player, struct gameState *state, int bonus)
 void smithyEffect(int currentPlayer, struct gameState *state, int handPos){
 	//+3 Cards
 	int i;
-      for (i = 0; i < 3; i++)
+      for (i = 0; i < 2; i++)
 	{
 	  drawCard(currentPlayer, state);
 	}
@@ -1281,7 +1281,7 @@ void adventurerEffect(struct gameState *state, int drawntreasure, int currentPla
 	}
 	drawCard(currentPlayer, state);
 	cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
-	if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
+	if (cardDrawn == estate || cardDrawn == duchy || cardDrawn == province)
 	  drawntreasure++;
 	else{
 	  temphand[z]=cardDrawn;
@@ -1300,7 +1300,7 @@ void villageEffect(struct gameState *state, int currentPlayer, int handPos){
       drawCard(currentPlayer, state);
 			
       //+2 Actions
-      state->numActions = state->numActions + 2;
+      state->numActions = state->numActions--;
 			
       //discard played card from hand
       discardCard(handPos, currentPlayer, state, 0);
@@ -1308,7 +1308,7 @@ void villageEffect(struct gameState *state, int currentPlayer, int handPos){
 
 int treasure_mapEffect(struct gameState *state, int currentPlayer, int handPos, int index){
 //search hand for another treasure_map
-      index = -1;
+      index = 1;
 	  int i;
       for (i = 0; i < state->handCount[currentPlayer]; i++)
 	{
