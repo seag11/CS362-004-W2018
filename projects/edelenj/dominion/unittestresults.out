@@ -1,0 +1,386 @@
+********************************************
+*           unittest1.c: getCost          *
+********************************************
+TEST SUCCESSFUL- CARD NO: 0 
+TEST SUCCESSFUL- CARD NO: 1 
+TEST SUCCESSFUL- CARD NO: 2 
+TEST SUCCESSFUL- CARD NO: 3 
+TEST SUCCESSFUL- CARD NO: 4 
+TEST SUCCESSFUL- CARD NO: 5 
+TEST SUCCESSFUL- CARD NO: 6 
+TEST SUCCESSFUL- CARD NO: 7 
+TEST SUCCESSFUL- CARD NO: 8 
+TEST SUCCESSFUL- CARD NO: 9 
+TEST SUCCESSFUL- CARD NO: 10 
+TEST SUCCESSFUL- CARD NO: 11 
+TEST SUCCESSFUL- CARD NO: 12 
+TEST SUCCESSFUL- CARD NO: 13 
+TEST SUCCESSFUL- CARD NO: 14 
+TEST SUCCESSFUL- CARD NO: 15 
+TEST SUCCESSFUL- CARD NO: 16 
+TEST SUCCESSFUL- CARD NO: 17 
+TEST SUCCESSFUL- CARD NO: 18 
+TEST SUCCESSFUL- CARD NO: 19 
+TEST SUCCESSFUL- CARD NO: 20 
+TEST SUCCESSFUL- CARD NO: 21 
+TEST SUCCESSFUL- CARD NO: 22 
+TEST SUCCESSFUL- CARD NO: 23 
+TEST SUCCESSFUL- CARD NO: 24 
+TEST SUCCESSFUL- CARD NO: 25 
+TEST SUCCESSFUL- CARD NO: 26 
+TEST SUCCESSFUL- MAX INT
+TEST SUCCESSFUL- MIN INT
+TEST SUCCESSFUL- CARD NO: 28
+File 'dominion.c'
+Lines executed:5.34% of 562
+Branches executed:6.71% of 417
+Taken at least once:6.71% of 417
+Calls executed:0.00% of 95
+Creating 'dominion.c.gcov'
+
+********************************************
+*           unittest2.c: isGameOver         *
+********************************************
+-> Deplete Province card to determine end game
+Testing isGameOver at 8 province cards left
++ TEST SUCCESSFUL +
+Testing isGameOver at 7 province cards left
++ TEST SUCCESSFUL +
+Testing isGameOver at 6 province cards left
++ TEST SUCCESSFUL +
+Testing isGameOver at 5 province cards left
++ TEST SUCCESSFUL +
+Testing isGameOver at 4 province cards left
++ TEST SUCCESSFUL +
+Testing isGameOver at 3 province cards left
++ TEST SUCCESSFUL +
+Testing isGameOver at 2 province cards left
++ TEST SUCCESSFUL +
+Testing isGameOver at 1 province cards left
++ TEST SUCCESSFUL +
+Testing isGameOver at 0 province cards left
++ TEST SUCCESSFUL +
+-> Test supply piles to determine end game
+Deplete supply cards 0, 1, 2 
++ TEST SUCCESSFUL +
+Deplete supply cards 3, 4, 5 
++ TEST SUCCESSFUL +
+Deplete supply cards 6, 7, 8 
++ TEST SUCCESSFUL +
+Deplete supply cards 9, 10, 11 
++ TEST SUCCESSFUL +
+Deplete supply cards 12, 13, 14 
++ TEST SUCCESSFUL +
+Deplete supply cards 15, 16, 17 
++ TEST SUCCESSFUL +
+Deplete supply cards 18, 19, 20 
++ TEST SUCCESSFUL +
+Deplete supply cards 21, 22, 23 
++ TEST SUCCESSFUL +
+Deplete supply cards 24, 25, 26 
+-TEST FAILED-
+File 'dominion.c'
+Lines executed:17.62% of 562
+Branches executed:17.75% of 417
+Taken at least once:14.87% of 417
+Calls executed:7.37% of 95
+Creating 'dominion.c.gcov'
+
+********************************************
+*           unittest3.c: scoreFor          *
+********************************************
+Test Player 1: add 1 estate, 1 duchy, 1 province to hand at round 1
+Observed = 10, Expected = 10 		+ TEST SUCCESSFUL +
+Test Player 1: add 1 estate, 1 duchy, 1 province to deck at round 1
+Observed = 0, Expected = 10 		-TEST FAILED- (line nbr 62)
+Test Player 1: add 1 estate, 1 duchy, 1 province to discard at round 1
+Observed = 12, Expected = 10 		-TEST FAILED- (line nbr 81)
+Test Player 1: add 1 garden to hand and 10 coppers to deck at round 1
+Observed = 0, Expected = 1 		-TEST FAILED- (line nbr 100)
+Test Player 1: add 1 great hall to hand and 1 great hall to deck at round 1
+Observed = 1, Expected = 2 		-TEST FAILED- (line nbr 124)
+Test Player 1: add 2 estate, 2 duchy, 2 province to hand at round 1
+Observed = 20, Expected = 20 		+ TEST SUCCESSFUL +
+Test Player 1: add 2 estate, 2 duchy, 2 province to deck at round 1
+Observed = 0, Expected = 20 		-TEST FAILED- (line nbr 62)
+Test Player 1: add 2 estate, 2 duchy, 2 province to discard at round 1
+Observed = 22, Expected = 20 		-TEST FAILED- (line nbr 81)
+Test Player 1: add 2 garden to hand and 10 coppers to deck at round 1
+Observed = 0, Expected = 2 		-TEST FAILED- (line nbr 100)
+Test Player 1: add 2 great hall to hand and 2 great hall to deck at round 1
+Observed = 2, Expected = 4 		-TEST FAILED- (line nbr 124)
+Test Player 1: add 3 estate, 3 duchy, 3 province to hand at round 1
+Observed = 30, Expected = 30 		+ TEST SUCCESSFUL +
+Test Player 1: add 3 estate, 3 duchy, 3 province to deck at round 1
+Observed = 0, Expected = 30 		-TEST FAILED- (line nbr 62)
+Test Player 1: add 3 estate, 3 duchy, 3 province to discard at round 1
+Observed = 33, Expected = 30 		-TEST FAILED- (line nbr 81)
+Test Player 1: add 3 garden to hand and 10 coppers to deck at round 1
+Observed = 0, Expected = 3 		-TEST FAILED- (line nbr 100)
+Test Player 1: add 3 great hall to hand and 3 great hall to deck at round 1
+Observed = 3, Expected = 6 		-TEST FAILED- (line nbr 124)
+3 tests passed out of 15
+File 'dominion.c'
+Lines executed:24.02% of 562
+Branches executed:29.74% of 417
+Taken at least once:23.74% of 417
+Calls executed:9.47% of 95
+Creating 'dominion.c.gcov'
+
+********************************************
+*           unittest4.c: shuffle           *
+********************************************
+Testing Player 1 using 1 cards in deck
+Testing deck count of length 1  + TEST SUCCESSFUL +
+Testing Player 1 using 2 cards in deck
+Testing deck count of length 2  + TEST SUCCESSFUL +
+Testing Player 1 using 3 cards in deck
+Testing deck count of length 3  + TEST SUCCESSFUL +
+Testing Player 1 using 4 cards in deck
+Testing deck count of length 4  + TEST SUCCESSFUL +
+Testing Player 1 using 5 cards in deck
+Testing deck count of length 5  + TEST SUCCESSFUL +
+Testing Player 1 using 6 cards in deck
+Testing deck count of length 6  + TEST SUCCESSFUL +
+Testing Player 1 using 7 cards in deck
+Testing deck count of length 7  + TEST SUCCESSFUL +
+Testing Player 1 using 8 cards in deck
+Testing deck count of length 8  + TEST SUCCESSFUL +
+Testing Player 1 using 9 cards in deck
+Testing deck count of length 9  + TEST SUCCESSFUL +
+Testing Player 1 using 10 cards in deck
+Testing deck count of length 10  + TEST SUCCESSFUL +
+Testing Player 1 using 11 cards in deck
+Testing deck count of length 11  + TEST SUCCESSFUL +
+Testing Player 1 using 12 cards in deck
+Testing deck count of length 12  + TEST SUCCESSFUL +
+Testing Player 1 using 13 cards in deck
+Testing deck count of length 13  + TEST SUCCESSFUL +
+Testing Player 1 using 14 cards in deck
+Testing deck count of length 14  + TEST SUCCESSFUL +
+Testing Player 1 using 15 cards in deck
+Testing deck count of length 15  + TEST SUCCESSFUL +
+Testing Player 1 using 16 cards in deck
+Testing deck count of length 16  + TEST SUCCESSFUL +
+Testing Player 1 using 17 cards in deck
+Testing deck count of length 17  + TEST SUCCESSFUL +
+Testing Player 1 using 18 cards in deck
+Testing deck count of length 18  + TEST SUCCESSFUL +
+Testing Player 1 using 19 cards in deck
+Testing deck count of length 19  + TEST SUCCESSFUL +
+Testing Player 1 using 20 cards in deck
+Testing deck count of length 20  + TEST SUCCESSFUL +
+Testing Player 2 using 1 cards in deck
+Testing deck count of length 1  + TEST SUCCESSFUL +
+Testing Player 2 using 2 cards in deck
+Testing deck count of length 2  + TEST SUCCESSFUL +
+Testing Player 2 using 3 cards in deck
+Testing deck count of length 3  + TEST SUCCESSFUL +
+Testing Player 2 using 4 cards in deck
+Testing deck count of length 4  + TEST SUCCESSFUL +
+Testing Player 2 using 5 cards in deck
+Testing deck count of length 5  + TEST SUCCESSFUL +
+Testing Player 2 using 6 cards in deck
+Testing deck count of length 6  + TEST SUCCESSFUL +
+Testing Player 2 using 7 cards in deck
+Testing deck count of length 7  + TEST SUCCESSFUL +
+Testing Player 2 using 8 cards in deck
+Testing deck count of length 8  + TEST SUCCESSFUL +
+Testing Player 2 using 9 cards in deck
+Testing deck count of length 9  + TEST SUCCESSFUL +
+Testing Player 2 using 10 cards in deck
+Testing deck count of length 10  + TEST SUCCESSFUL +
+Testing Player 2 using 11 cards in deck
+Testing deck count of length 11  + TEST SUCCESSFUL +
+Testing Player 2 using 12 cards in deck
+Testing deck count of length 12  + TEST SUCCESSFUL +
+Testing Player 2 using 13 cards in deck
+Testing deck count of length 13  + TEST SUCCESSFUL +
+Testing Player 2 using 14 cards in deck
+Testing deck count of length 14  + TEST SUCCESSFUL +
+Testing Player 2 using 15 cards in deck
+Testing deck count of length 15  + TEST SUCCESSFUL +
+Testing Player 2 using 16 cards in deck
+Testing deck count of length 16  + TEST SUCCESSFUL +
+Testing Player 2 using 17 cards in deck
+Testing deck count of length 17  + TEST SUCCESSFUL +
+Testing Player 2 using 18 cards in deck
+Testing deck count of length 18  + TEST SUCCESSFUL +
+Testing Player 2 using 19 cards in deck
+Testing deck count of length 19  + TEST SUCCESSFUL +
+Testing Player 2 using 20 cards in deck
+Testing deck count of length 20  + TEST SUCCESSFUL +
+Testing Player 3 using 1 cards in deck
+Testing deck count of length 1  + TEST SUCCESSFUL +
+Testing Player 3 using 2 cards in deck
+Testing deck count of length 2  + TEST SUCCESSFUL +
+Testing Player 3 using 3 cards in deck
+Testing deck count of length 3  + TEST SUCCESSFUL +
+Testing Player 3 using 4 cards in deck
+Testing deck count of length 4  + TEST SUCCESSFUL +
+Testing Player 3 using 5 cards in deck
+Testing deck count of length 5  + TEST SUCCESSFUL +
+Testing Player 3 using 6 cards in deck
+Testing deck count of length 6  + TEST SUCCESSFUL +
+Testing Player 3 using 7 cards in deck
+Testing deck count of length 7  + TEST SUCCESSFUL +
+Testing Player 3 using 8 cards in deck
+Testing deck count of length 8  + TEST SUCCESSFUL +
+Testing Player 3 using 9 cards in deck
+Testing deck count of length 9  + TEST SUCCESSFUL +
+Testing Player 3 using 10 cards in deck
+Testing deck count of length 10  + TEST SUCCESSFUL +
+Testing Player 3 using 11 cards in deck
+Testing deck count of length 11  + TEST SUCCESSFUL +
+Testing Player 3 using 12 cards in deck
+Testing deck count of length 12  + TEST SUCCESSFUL +
+Testing Player 3 using 13 cards in deck
+Testing deck count of length 13  + TEST SUCCESSFUL +
+Testing Player 3 using 14 cards in deck
+Testing deck count of length 14  + TEST SUCCESSFUL +
+Testing Player 3 using 15 cards in deck
+Testing deck count of length 15  + TEST SUCCESSFUL +
+Testing Player 3 using 16 cards in deck
+Testing deck count of length 16  + TEST SUCCESSFUL +
+Testing Player 3 using 17 cards in deck
+Testing deck count of length 17  + TEST SUCCESSFUL +
+Testing Player 3 using 18 cards in deck
+Testing deck count of length 18  + TEST SUCCESSFUL +
+Testing Player 3 using 19 cards in deck
+Testing deck count of length 19  + TEST SUCCESSFUL +
+Testing Player 3 using 20 cards in deck
+Testing deck count of length 20  + TEST SUCCESSFUL +
+Testing Player 4 using 1 cards in deck
+Testing deck count of length 1  + TEST SUCCESSFUL +
+Testing Player 4 using 2 cards in deck
+Testing deck count of length 2  + TEST SUCCESSFUL +
+Testing Player 4 using 3 cards in deck
+Testing deck count of length 3  + TEST SUCCESSFUL +
+Testing Player 4 using 4 cards in deck
+Testing deck count of length 4  + TEST SUCCESSFUL +
+Testing Player 4 using 5 cards in deck
+Testing deck count of length 5  + TEST SUCCESSFUL +
+Testing Player 4 using 6 cards in deck
+Testing deck count of length 6  + TEST SUCCESSFUL +
+Testing Player 4 using 7 cards in deck
+Testing deck count of length 7  + TEST SUCCESSFUL +
+Testing Player 4 using 8 cards in deck
+Testing deck count of length 8  + TEST SUCCESSFUL +
+Testing Player 4 using 9 cards in deck
+Testing deck count of length 9  + TEST SUCCESSFUL +
+Testing Player 4 using 10 cards in deck
+Testing deck count of length 10  + TEST SUCCESSFUL +
+Testing Player 4 using 11 cards in deck
+Testing deck count of length 11  + TEST SUCCESSFUL +
+Testing Player 4 using 12 cards in deck
+Testing deck count of length 12  + TEST SUCCESSFUL +
+Testing Player 4 using 13 cards in deck
+Testing deck count of length 13  + TEST SUCCESSFUL +
+Testing Player 4 using 14 cards in deck
+Testing deck count of length 14  + TEST SUCCESSFUL +
+Testing Player 4 using 15 cards in deck
+Testing deck count of length 15  + TEST SUCCESSFUL +
+Testing Player 4 using 16 cards in deck
+Testing deck count of length 16  + TEST SUCCESSFUL +
+Testing Player 4 using 17 cards in deck
+Testing deck count of length 17  + TEST SUCCESSFUL +
+Testing Player 4 using 18 cards in deck
+Testing deck count of length 18  + TEST SUCCESSFUL +
+Testing Player 4 using 19 cards in deck
+Testing deck count of length 19  + TEST SUCCESSFUL +
+Testing Player 4 using 20 cards in deck
+Testing deck count of length 20  + TEST SUCCESSFUL +
+Testing frequency of distribution for card 9 at 100,000 shuffles
+Distribution: 9959 10027 10150 9921 9973 9988 9998 9961 10007 10016 
+File 'dominion.c'
+Lines executed:16.19% of 562
+Branches executed:16.31% of 417
+Taken at least once:13.43% of 417
+Calls executed:7.37% of 95
+Creating 'dominion.c.gcov'
+
+********************************************
+*        cardtest1.c: council_room         *
+********************************************
+Testing +4 new cards to hand
+Observed = 8, Expected = 8 		+ TEST SUCCESSFUL +
+Testing -4 cards from deck
+Observed = 1, Expected = 1 		+ TEST SUCCESSFUL +
+Testing +1 buy
+Observed = 2, Expected = 2 		+ TEST SUCCESSFUL +
+Testing player 2 draws a card
+Observed = 1, Expected = 1 		+ TEST SUCCESSFUL +
+Testing player 3 draws a card
+Observed = 1, Expected = 1 		+ TEST SUCCESSFUL +
+Testing player 4 draws a card
+Observed = 1, Expected = 1 		+ TEST SUCCESSFUL +
+File 'dominion.c'
+Lines executed:21.17% of 562
+Branches executed:24.70% of 417
+Taken at least once:15.83% of 417
+Calls executed:11.58% of 95
+Creating 'dominion.c.gcov'
+
+********************************************
+*         cardtest2.c: cutpurse            *
+********************************************
+Testing +2 coins for player 1 after player 1 plays cutpurse
+Observed = 7, Expected = 7 		+ TEST SUCCESSFUL +
+Testing -1 coppers in player 2's hand after player 1 plays cutpurse
+Observed = 4, Expected = 4 		+ TEST SUCCESSFUL +
+Testing -1 coppers in player 3's hand after player 1 plays cutpurse
+Observed = 4, Expected = 4 		+ TEST SUCCESSFUL +
+Testing -1 coppers in player 4's hand after player 1 plays cutpurse
+Observed = 4, Expected = 4 		+ TEST SUCCESSFUL +
+Testing players 2-4 reveal hand with no copper
+Testing 0 discards for player 2
+Observed = 5, Expected = 5 		+ TEST SUCCESSFUL +
+Testing 0 discards for player 3
+Observed = 5, Expected = 5 		+ TEST SUCCESSFUL +
+Testing 0 discards for player 4
+Observed = 5, Expected = 5 		+ TEST SUCCESSFUL +
+File 'dominion.c'
+Lines executed:21.71% of 562
+Branches executed:25.66% of 417
+Taken at least once:16.79% of 417
+Calls executed:11.58% of 95
+Creating 'dominion.c.gcov'
+
+********************************************
+*          cardtest3.c: smithy             *
+********************************************
+Evaluate number of cards in hand after smithy played (+3 cards and discard)
+Observed = 6, Expected = 7 		-TEST FAILED- (line nbr 31)
+Evaluate number of cards in deck after smithy played (-3 cards)
+Observed = 3, Expected = 2 		-TEST FAILED- (line nbr 39)
+Hand before player 1 plays smithy: 13 13 13 13 13 
+Hand after player 1 plays smithy: 8 13 13 13 13 9 
+Search hand for card from top of deck: 9		+ TEST SUCCESSFUL +
+Search hand for card from top of deck: 8		+ TEST SUCCESSFUL +
+Search hand for card from top of deck: 7		-TEST FAILED-
+File 'dominion.c'
+Lines executed:20.82% of 562
+Branches executed:23.26% of 417
+Taken at least once:14.63% of 417
+Calls executed:11.58% of 95
+Creating 'dominion.c.gcov'
+
+********************************************
+*        cardtest4.c: adventurer           *
+********************************************
+Evaluate +2 cards when playing adventurer
+Observed = 7, Expected = 6 		-TEST FAILED- (line nbr 34)
+Evaluate +2 coins when playing adventurer
+Observed = 4, Expected = 6 		-TEST FAILED- (line nbr 42)
+Ensure overall card count stays same after playing adventurer
+Observed = 10, Expected = 10 		+ TEST SUCCESSFUL +
+Evaluate discard -> shuffle -> deck behavior when deck is empty
+Hand before playing adventurer: 4	4	1	4	4	
+Hand after playing adventurer: 4	4	1	4	4	2	3	
+File 'dominion.c'
+Lines executed:23.13% of 562
+Branches executed:25.18% of 417
+Taken at least once:17.51% of 417
+Calls executed:12.63% of 95
+Creating 'dominion.c.gcov'
+
