@@ -1,4 +1,4 @@
-CFLAGS = -Wall -fpic -coverage -lm -g
+CFLAGS = -Wall -fpic -coverage -lm
 	
 randomtestcard1: randomtestcard1.c dominion.o rngs.o
 	gcc -o randomtestcard1 -g  randomtestcard1.c dominion.o rngs.o $(CFLAGS)

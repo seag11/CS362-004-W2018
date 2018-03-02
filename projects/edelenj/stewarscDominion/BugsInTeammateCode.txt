@@ -1,0 +1,130 @@
+/*****************************
+*          BUG #1            *
+*****************************/
+
+Title: Stack-Smashing Bug for adventurer card when target card is not found  
+
+Id#: D001
+
+Class: Serious Bug
+
+Date:         1 March 2018    
+Reported By:  Jarret Edelen
+
+
+Product: dominion.c             Version: stewarsc-assignment-2
+Platform:  Ubuntu 16.04.4 LTS   Version: 4.13.0-32-generic
+Browser:   n/a                  Version: n/a
+URL: n/a      
+
+Is it reproducible: Yes
+
+Description
+===========
+
+Ran one instance of cardEffect using the adventurer card and encountered a stack overflow when the target treasure card was not found in the deck or discard pile.
+
+Steps to Produce/Reproduce
+--------------------------
+Uncomment lines 29 & 30 in cardtest4.c, compile using makefile ‘make all’ command, and run cardtest4 in test suite.
+
+
+Expected Results
+----------------
+Handcount should show +1 card after playing adventurer, which is calculated as follows: handCount + 2 – 1 (discard) = 6.
+
+
+Actual Results
+--------------
+Unavailable, handcount reaches -2571 before SIGABRT raised and process terminates.
+
+
+Workarounds
+-----------
+Ensure at least 2 silver treasure cards are available in hand.  This workaround is encoded in cardtest4.c at lines 29 & 30.
+
+
+Attachments
+-----------
+error message:
+*** stack smashing detected ***: ./cardtest4 terminated
+
+
+Other Information
+-----------------
+
+This bug stems from the deck shuffling strategy at line 1319 in dominion.c.  This shuffle is only called when the deck size is 0, so the function always returns -1. The fix should involve an alteration to the while block at 1317 such that the loop ends when the discardCount is 0.  This way, no more searching occurs after the deck and the discard piles are exhausted.  The function drawCard already checks for an empty deck and shuffles the discard correctly.
+This bug was found using gdb.  Using the conditional watch command, it was observed that state→handCount[currentPlayer] became negative, which is undesired/undefined behavior.  The handcount should always be positive or zero, especially because this count is used to index the player’s hand (represented an an array) at many points within dominion.c.
+
+
+/*****************************
+*          BUG #2            *
+*****************************/
+
+Title: Smithy draws too few cards from deck
+
+Id#: D001
+
+Class: Medium-severity Bug
+
+Date:         1 March 2018    
+Reported By:  Jarret Edelen   
+
+
+Product: dominion.c             Version: stewarsc-assignment-2
+Platform:  Ubuntu 16.04.4 LTS   Version: 4.13.0-32-generic
+Browser:   n/a                  Version: n/a
+URL: n/a      
+
+Is it reproducible: Yes
+
+Description
+===========
+Bug causes incorrect number of cards to be drawn from deck after playing smithy.
+
+
+Steps to Produce/Reproduce
+--------------------------
+I played smithy using the cardEffect function call, and only 2 cards were issued from the deck.  To reproduce, compile using makefile ‘make all’ command, and run cardtest3 in test suite.
+
+
+Expected Results
+----------------
+For test @ line 31:  7 cards
+For test @ line 39:  2 cards
+For test @ line 80:  8 13 13 13 13 9 7 (card 7 should be in hand after smithy)
+
+
+Actual Results
+--------------
+For test @ line 31:  6 cards
+For test @ line 39:  3 cards
+For test @ line 80:  8 13 13 13 13 9
+
+
+Workarounds
+-----------
+No known workaround exists.
+
+
+Attachments
+-----------
+The following is an excerpt of the log of failed test cases: 
+
+Evaluate number of cards in hand after smithy played (+3 cards and discard)
+Observed = 6, Expected = 7 		-TEST FAILED- (line nbr 31)
+Evaluate number of cards in deck after smithy played (-3 cards)
+Observed = 3, Expected = 2 		-TEST FAILED- (line nbr 39)
+Hand before player 1 plays smithy: 13 13 13 13 13 
+Hand after player 1 plays smithy: 8 13 13 13 13 9 
+Search hand for card from top of deck: 9		+ TEST SUCCESSFUL +
+Search hand for card from top of deck: 8		+ TEST SUCCESSFUL +
+Search hand for card from top of deck: 7		-TEST FAILED-
+
+
+Other Information
+-----------------
+This bug stems from incorrectly initializing the incrementing variable i to 1 in the for loop at line 1343 of dominion.c.  This results in the drawCard function being called only twice, thus issuing 2 new cards to the player instead of 3.  The fix involves initializing i to 0 instead of 1.  Note that the discard function is working as intended.
+
+This bug was found by inspecting the log of failed test cases and isolating the failing test cases, which were 3 in number.  dominion.c was then examined to determine the root cause.
+
